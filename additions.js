@@ -15,7 +15,7 @@ function normalize(integer) {
 const trainingSet = []
 
 for (let i = 0; i < 1000; i++) {
-  let integer1 = Math.floor(Math.random() * 10) // integer1 is one of {1, 2, 3, 4, 5, 6, 7, 8, 9}
+  let integer1 = Math.floor(Math.random() * 10) // integer1 is one of {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
   let integer2 = Math.round(Math.random() * (10 - integer1)) // integer2 is 10 - integer1 this is because we cannot expect output to be greater than 10 (1)
 
   let output = (integer1 + integer2) / 10 // output is (0, 1)
