@@ -1,0 +1,7 @@
+{
+  "name": "neural-network-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Michal Jarnot",
+  "license": "ISC"
+}
