@@ -13,10 +13,10 @@ module.exports = {
     this.neat = new Neat(
       2, // number of inputs
       1, // number of outputs
-      null, // fitnessFunction - in this example we are calculating fitness inside startEvaluation method
+      null, // fitnessFunction - in this example we are calculating fitness inside live method
       {
         elitism: 5, // this sets how many genomes in population will be passed into next generation without mutation https://www.researchgate.net/post/What_is_meant_by_the_term_Elitism_in_the_Genetic_Algorithm
-        mutationRate: 0.3, // Sets the mutation rate. If set to 0.3, 30% of the new population will be mutated. Default is 0.3
+        mutationRate: 0.3, // sets the mutation rate. If set to 0.3, 30% of the new population will be mutated. Default is 0.3
         network: // https://wagenaartje.github.io/neataptic/docs/architecture/network/
           new architect.Random(
             2,
@@ -69,7 +69,7 @@ module.exports = {
     // our new population will be here
     let newPopulation = []
 
-    // we want to push neat.elitism number of best into the new population automatically
+    // we want to push neat.elitism number of best genomes into the new population automatically
     for (let i = 0; i < neat.elitism; i++) {
       newPopulation.push(neat.population[i])
     }
