@@ -3,7 +3,7 @@ const genetic = require('./genetic')
 
 genetic.generateRandomPopulation()
 
-for (let iteration = 0; iteration < 3000; iteration += 1) {
+for (let iteration = 0; iteration < 1000; iteration += 1) {
   genetic.live()
   genetic.evolve()
 }
