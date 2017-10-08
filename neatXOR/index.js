@@ -1,31 +1,21 @@
-const GeneticAlgorithm = require('./neat')
+const genetic = require('./genetic')
 
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min
+genetic.generateRandomPopulation()
+
+for (let iteration = 0; iteration < 3000; iteration += 1) {
+  genetic.live()
+  genetic.evolve()
 }
 
-const possibleXorInputs = [
-  [0, 0],
-  [0, 1],
-  [1, 0],
-  [1, 1],
-]
+const genom = genetic.neat.population[0]
 
-const numberOfIterations = 100
-const populationSize = 10
-const topUnits = 2
-
-const GA = new GeneticAlgorithm(populationSize, topUnits)
-GA.reset()
-GA.createPopulation()
-
-for (let z = 0; z < numberOfIterations; z += 1) {
-  for (let index = 0; index < populationSize; index += 1) {
-    GA.activateBrain(index, possibleXorInputs[getRandomInt(0, 3)])
-  }
-  GA.evolvePopulation()
-  GA.iteration += 1
-}
-
-console.log('exit')
+console.log(`
+  Result for genom with index 0 in the newest population. Note that selection / mutation happened
+  after we called last evolve function so this is not necessarily the best genome in the population.
+  
+  [0, 0] = ${genom.activate([0, 0])} (should be 0) 
+  [1, 1] = ${genom.activate([1, 1])} (should be 0) 
+  [0, 1] = ${genom.activate([0, 1])} (should be 1) 
+  [1, 0] = ${genom.activate([1, 0])} (should be 1) 
+`)
