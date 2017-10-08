@@ -34,7 +34,7 @@ module.exports = {
     return fitness
   },
   live: function () {
-    // update generation index
+    // increment generation index
     this.neat.generation += 1
 
     // loop through each genome
