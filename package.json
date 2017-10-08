@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Michal Jarnot",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "synaptic": "^1.1.3"
+  }
 }
