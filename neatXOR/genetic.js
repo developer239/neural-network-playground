@@ -34,6 +34,9 @@ module.exports = {
     return fitness
   },
   live: function () {
+    // update generation index
+    this.neat.generation += 1
+
     // loop through each genome
     for (let genomeIndex in this.neat.population) {
       const possibleInputs = this.possibleInputs
@@ -80,11 +83,5 @@ module.exports = {
     neat.population = newPopulation
     // mutate the population
     neat.mutate()
-
-    // update generation index
-    this.neat.generation += 1
-
-    // run another evaluation
-    this.live()
   },
 }
