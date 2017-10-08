@@ -15,8 +15,8 @@ module.exports = {
       1, // number of outputs
       null, // fitnessFunction - in this example we are calculating fitness inside startEvaluation method
       {
-        elitism: 0.4, // this value is quite important 0.4 should be a sweet spot https://www.researchgate.net/post/What_is_meant_by_the_term_Elitism_in_the_Genetic_Algorithm
-        mutationRate: 0.1, // Sets the mutation rate. If set to 0.3, 30% of the new population will be mutated. Default is 0.3
+        elitism: 5, // this tells ho many genomes in population will be passed into next generation without mutation https://www.researchgate.net/post/What_is_meant_by_the_term_Elitism_in_the_Genetic_Algorithm
+        mutationRate: 0.3, // Sets the mutation rate. If set to 0.3, 30% of the new population will be mutated. Default is 0.3
         network: // https://wagenaartje.github.io/neataptic/docs/architecture/network/
           new architect.Random(
             2,
