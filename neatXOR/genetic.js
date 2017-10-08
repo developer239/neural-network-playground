@@ -69,7 +69,7 @@ module.exports = {
     // our new population will be here
     let newPopulation = []
 
-    // we want to push neat.elitism% best into the new population automatically
+    // we want to push neat.elitism number of best into the new population automatically
     for (let i = 0; i < neat.elitism; i++) {
       newPopulation.push(neat.population[i])
     }
